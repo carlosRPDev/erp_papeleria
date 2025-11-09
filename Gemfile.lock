@@ -1,3 +1,9 @@
+PATH
+  remote: engines/erp_users
+  specs:
+    erp_users (0.1.0)
+      rails (>= 8.0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -486,6 +492,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  erp_users!
   factory_bot_rails
   hotwire-livereload
   html2slim
