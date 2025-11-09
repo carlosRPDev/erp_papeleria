@@ -23,5 +23,13 @@ module ErpPapeleria
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    #
+
+    config.generators do |g|
+      g.template_engine :slim
+      g.test_framework  :rspec, fixture: true
+      g.helper false
+      g.assets false
+    end
   end
 end
