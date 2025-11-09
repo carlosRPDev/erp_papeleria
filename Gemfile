@@ -29,6 +29,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
+gem "stimulus_reflex"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -68,6 +69,8 @@ group :development do
   gem "web-console"
 
   gem "hotwire-livereload"
+
+  gem "html2slim"
 end
 
 group :test do
