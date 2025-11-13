@@ -40,6 +40,18 @@ Rails.application.configure do
   # Set localhost to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
+  # Configuración base para todos los mails en desarrollo
+  config.action_mailer.perform_deliveries = true
+
+  # Usar Letter Opener Web como método principal
+  config.action_mailer.delivery_method = :letter_opener
+
+  # Para Letter Opener Web
+  config.action_mailer.delivery_method = :letter_opener_web
+
+  # Opcional: encoding
+  config.action_mailer.default_options = { from: "no-reply@erpplusclientes.com" }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -75,5 +87,18 @@ Rails.application.configure do
     config.hotwire_livereload.listen_paths << engine_path
   end
 
+  # Hace que todos los engines hereden esta configuración
+  ActiveSupport.on_load(:action_mailer) do
+    ActionMailer::Base.delivery_method = Rails.configuration.action_mailer.delivery_method
+    ActionMailer::Base.perform_deliveries = Rails.configuration.action_mailer.perform_deliveries
+    ActionMailer::Base.raise_delivery_errors = Rails.configuration.action_mailer.raise_delivery_errors
+    ActionMailer::Base.default Rails.configuration.action_mailer.default_url_options
+  end
+
   config.hosts << /[a-z0-9\-]+\.ngrok\-free\.app/
+
+  # Optional: esto asegura que TURBO_STREAM no rompa Letter Opener
+  # Rails.application.config.after_initialize do
+  #   ActionMailer::Base.register_observer(LetterOpener::MessageObserver)
+  # end
 end

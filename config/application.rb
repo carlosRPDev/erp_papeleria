@@ -34,5 +34,15 @@ module ErpPlus
       g.helper false
       g.assets false
     end
+
+    if Rails.env.development?
+      config.to_prepare do
+        ActionMailer::Base.delivery_method = :letter_opener_web
+        ActionMailer::Base.delivery_method = :letter_opener
+        ActionMailer::Base.perform_deliveries = true
+        ActionMailer::Base.default_url_options = { host: "localhost", port: 3000 }
+        ActionMailer::Base.default from: "no-reply@erpplusclientes.com"
+      end
+    end
   end
 end

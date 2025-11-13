@@ -71,6 +71,9 @@ group :development do
   gem "hotwire-livereload"
 
   gem "html2slim"
+
+  gem "letter_opener"
+  gem "letter_opener_web"
 end
 
 group :test do
