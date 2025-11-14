@@ -1,28 +1,27 @@
-nav.bg-white.shadow-md.fixed.top-0.left-0.w-full.z-20.transition-all
+nav class="navbar-ios backdrop-blur-sm bg-white/70 border-b border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] fixed top-0 left-0 w-full z-50 transition-all duration-300" data-controller="menu-scroll" data-menu-scroll-target="nav"
   .container.mx-auto.px-6.py-4.flex.justify-between.items-center
-    / Controller wrapper
     .flex.justify-between.items-center.w-full data-controller="menu"
-      
+
       / Logo
-      = link_to root_path, class: "flex items-center space-x-1 text-2xl font-bold text-gray-800" do
-        span.text-orange-500 ERP+
+      = link_to root_path, class: "flex items-center space-x-1 text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-300" do
+        span ERP+
 
       / Desktop menu
-      ul.hidden.md:flex.space-x-8.text-gray-700.font-medium
-        li = link_to 'Inicio', root_path, class: 'hover:text-orange-500 transition'
-        li = link_to 'Productos', '#productos', class: 'hover:text-orange-500 transition'
-        li = link_to 'Nosotros', about_path, class: 'hover:text-orange-500 transition'
-        li = link_to 'Contacto', '#contacto', class: 'hover:text-orange-500 transition'
-        li = link_to "Iniciar sesión", helpers.erp_core.new_user_session_path, class: 'hover:text-orange-500 transition'
-
-      / Mobile menu button
-      button#menu-btn.md:hidden.text-gray-700.text-3xl.focus:outline-none data-action="click->menu#toggle"
+      ul.hidden.md:flex.space-x-8.text-gray-700.dark:text-gray-200.font-medium
+        li = link_to 'Inicio', root_path, class: 'hover:text-orange-300 text-orange-400 transition-all duration-200'
+        li = link_to 'Productos', '#productos', class: 'hover:text-orange-300 text-orange-400 transition-all duration-200'
+        li = link_to 'Nosotros', about_path, class: 'hover:text-orange-300 text-orange-400 transition-all duration-200'
+        li = link_to 'Contacto', '#contacto', class: 'hover:text-orange-300 text-orange-400 transition-all duration-200'        
+        li = link_to "Iniciar sesión", helpers.erp_core.new_user_session_path, class: "px-4 py-2 rounded-2xl font-medium text-orange-500 bg-white/40 backdrop-blur-2xl border border-white/40 shadow-[0_8px_30px_rgba(0,0,0,0.1)] hover:bg-white/20 hover:border-white-400/80 transition-all duration-300"
+      
+      / Mobile button
+      button#menu-btn.md:hidden.text-orange-600.dark:text-orange-500.text-3xl.focus:outline-none data-action="click->menu#toggle"
         i.fas.fa-bars
 
-      / Mobile menu (hidden by default)
-      ul#mobile-menu.hidden.space-y-4.md:hidden data-menu-target="menu"
-        li = link_to 'Inicio', root_path, class: 'block hover:text-orange-500 transition'
-        li = link_to 'Productos', '#productos', class: 'block hover:text-orange-500 transition'
-        li = link_to 'Nosotros', about_path, class: 'block hover:text-orange-500 transition'
-        li = link_to 'Contacto', '#contacto', class: 'block hover:text-orange-500 transition'
-        li = link_to "Iniciar sesión", helpers.erp_core.new_user_session_path, class: 'block hover:text-orange-500 transition'
+      / Mobile menu glass card
+      ul#mobile-menu.hidden.space-y-4.md:hidden class="space-y-4 md:hidden backdrop-blur-xl bg-gray/80 dark:bg-white/40 border border-white/20 rounded-xl p-5 mt-4 shadow-xl" data-menu-target="menu"
+        li = link_to 'Inicio', root_path, class: 'block text-orange-600 transition'
+        li = link_to 'Productos', '#productos', class: 'block text-orange-600 transition'
+        li = link_to 'Nosotros', about_path, class: 'block text-orange-600 transition'
+        li = link_to 'Contacto', '#contacto', class: 'block text-orange-600 transition'
+        li = link_to "Iniciar sesión", helpers.erp_core.new_user_session_path, class: 'block text-orange-600 transition'

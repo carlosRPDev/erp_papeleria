@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+/* Navbar mini efecto estilo iOS Safari */
+.nav-mini {
+  padding-top: 0.4rem !important;
+  padding-bottom: 0.4rem !important;
+  backdrop-filter: blur(5px) !important;
+  background-color: rgba(255, 255, 255, 0.55) !important;
+}
+
+/* Modo oscuro automático */
+@media (prefers-color-scheme: dark) {
+  .navbar-ios {
+    background-color: rgba(20, 20, 20, 0.20);
+    border-color: rgba(255, 255, 255, 0.69);
+  }
+
+  .navbar-ios.nav-mini {
+    background-color: rgba(20, 20, 20, 0.10) !important;
+  }
+}
