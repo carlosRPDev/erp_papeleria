@@ -14,9 +14,9 @@
 = render Home::Index::Features::BaseComponent.new(features: features)
 
 - plans = []
-- plans << { title: "Básico", description: "Ideal para empezar con tu emprendimiento", price: "$20.000/mes", features: ["Registrar productos", "Control de inventario básico"], cta_text: "Comenzar", cta_link: "#", highlight: false }
-- plans << { title: "Premium", description: "Todo lo que necesitas para tu negocio", price: "$79.000/mes", features: ["Todo lo del plan básico*", "Todo lo del plan profesional*","Inventario avanzado", "Reportes de ventas", "Gestión de clientes", "Alertas y notificaciones"], cta_text: "Probar ahora", cta_link: "#", highlight: true }
-- plans << { title: "Profesional", description: "Para grandes negocios y franquicias", price: "$44.000/mes", features: ["Todo lo del plan básico*", "Multi-sucursal", "Gestión de usuarios y roles", "Reportes avanzados"], cta_text: "Comenzar", cta_link: "#", highlight: false }
+- plans << { title: "Básico", description: "Ideal para empezar con tu emprendimiento", price: "$20.000/mes", features: ["Registrar productos", "Control de inventario básico"], cta_text: "Comenzar ahora", cta_link: "#", highlight: false }
+- plans << { title: "Premium", description: "Todo lo que necesitas para tu negocio", price: "$79.000/mes", features: ["Todo lo del plan básico*", "Todo lo del plan profesional*","Inventario avanzado", "Reportes de ventas", "Gestión de clientes", "Alertas y notificaciones"], cta_text: "Comprar ahora", cta_link: "#", highlight: true }
+- plans << { title: "Profesional", description: "Para grandes negocios y franquicias", price: "$44.000/mes", features: ["Todo lo del plan básico*", "Multi-sucursal", "Gestión de usuarios y roles", "Reportes avanzados"], cta_text: "Comprar ahora", cta_link: "#", highlight: false }
 
 = render Home::Index::Pricing::BaseComponent.new(plans: plans)
 

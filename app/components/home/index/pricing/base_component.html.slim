@@ -12,5 +12,5 @@ section[class="bg-gray-50 py-20" id="planes" data-controller="animate"]
           ul[class="mb-6 space-y-2"]
             - plan[:features].each do |feature|
               li[class="text-gray-700"] = "• #{feature}"
-          = link_to plan[:cta_text], plan[:cta_link], class: "mt-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl transition"
+          = link_to plan[:cta_text], plan[:cta_link], class: "mt-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl transition font-semibold cursor-not-allowed opacity-50 pointer-events-none"
 
