@@ -1,0 +1,266 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/carlosrodriguez/Desktop/erp_plus/engines/erp_users/lib/erp_users.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/engines/erp_users/lib/erp_users/engine.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/engines/erp_core/lib/erp_core.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/engines/erp_core/lib/erp_core/engine.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/engines/erp_core/app/models/erp_core/admin.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          9,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/engines/erp_core/app/models/erp_core/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/engines/erp_core/app/models/erp_core/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/app/components/home/about/history/base_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/app/components/home/about/team/base_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          7,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          10,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          11,
+          null,
+          8,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/app/components/home/about/testimonials/base_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          17,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/app/components/home/about/values/base_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/app/components/home/index/cta/base_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          12,
+          12,
+          12,
+          12,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/app/components/home/index/hero/base_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/app/components/home/index/pricing/base_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          15,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/app/components/ui/footer/base_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/app/components/ui/navbar/base_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/carlosrodriguez/Desktop/erp_plus/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1763537295
+  }
+}

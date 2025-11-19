@@ -3,13 +3,34 @@
 require "rails_helper"
 
 RSpec.describe Home::About::Values::BaseComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#initialize" do
+    it "sets @alternate by default" do
+      component = described_class.new
+      expect(component.instance_variable_get(:@alternate)).to eq(true)
+    end
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+    it "allows overriding @alternate" do
+      component = described_class.new(alternate: false)
+      expect(component.instance_variable_get(:@alternate)).to eq(false)
+    end
+  end
+
+  describe "#values" do
+    it "returns an array with the expected structure" do
+      component = described_class.new
+
+      result = component.send(:values)
+
+      expect(result).to be_an(Array)
+      expect(result.first).to include(:title, :desc, :image)
+    end
+  end
+
+  describe "rendering" do
+    it "renders successfully" do
+      render_inline(described_class.new)
+
+      expect(page).to be_present
+    end
+  end
 end

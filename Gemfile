@@ -43,7 +43,7 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # View components and templates
-gem "view_component", "~> 3.0"
+gem "view_component"
 gem "slim-rails"           # usar Slim en vez de ERB
 
 # Authentication
@@ -62,6 +62,10 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "faker"
+  gem "shoulda-matchers", "~> 7.0"
+  gem "simplecov", require: false
+
+  gem "simplecov-console", require: false
 end
 
 group :development do

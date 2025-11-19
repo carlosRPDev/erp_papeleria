@@ -3,13 +3,49 @@
 require "rails_helper"
 
 RSpec.describe Home::Index::Cta::BaseComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:title)         { "Título personalizado" }
+  let(:subtitle)      { "Subtítulo personalizado" }
+  let(:primary_url)   { "/signup" }
+  let(:secondary_url) { "/demo" }
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+  let(:component) do
+    described_class.new(
+      title: title,
+      subtitle: subtitle,
+      primary_url: primary_url,
+      secondary_url: secondary_url
+    )
+  end
+
+  let(:rendered) { render_inline(component) }
+
+  describe "render" do
+    it "renders the wrapper section" do
+      expect(rendered.css("section.py-20.bg-gray-50")).to be_present
+    end
+
+    it "renders the title" do
+      expect(rendered.text).to include(title)
+    end
+
+    it "renders the subtitle" do
+      expect(rendered.text).to include(subtitle)
+    end
+
+    it "renders the primary button with the correct URL" do
+      primary_btn = rendered.css("a[href='#{primary_url}']").first
+      expect(primary_btn.text).to eq("Comenzar prueba gratuita")
+    end
+
+    it "renders the secondary button with the correct URL" do
+      secondary_btn = rendered.css("a[href='#{secondary_url}']").first
+      expect(secondary_btn.text).to eq("Solicitar demo")
+    end
+
+    it "applies disabled / visual classes to buttons" do
+      btn = rendered.css("a").first
+      expect(btn["class"]).to include("cursor-not-allowed")
+      expect(btn["class"]).to include("opacity-50")
+    end
+  end
 end

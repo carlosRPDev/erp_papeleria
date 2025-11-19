@@ -1,4 +1,50 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+# ===========================
+# 🚀 SimpleCov (Coverage)
+# ===========================
+require 'simplecov'
+require 'simplecov-console'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::Console
+])
+
+SimpleCov.minimum_coverage 90
+SimpleCov.minimum_coverage_by_file 80
+
+SimpleCov.start 'rails' do
+  add_filter '/spec/'
+  add_filter '/config/'
+  add_filter '/vendor/'
+  add_filter '/bin/'
+  add_filter '/db/'
+  add_filter '/app/channels/'
+  add_filter '/app/helpers/'
+
+  # Archivos Rails base sin lógica
+  add_filter '/app/jobs/application_job.rb'
+  add_filter '/app/models/application_record.rb'
+  add_filter '/app/mailers/application_mailer.rb'
+  add_filter '/app/controllers/application_controller.rb'
+
+  add_group 'Models', 'app/models'
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Components', 'app/components'
+  add_group 'Jobs', 'app/jobs'
+  add_group 'Mailers', 'app/mailers'
+end
+
+puts "🔥 SimpleCov iniciado"
+
+# ===========================
+# 🚀 view_components test helpers
+# ===========================
+require "view_component/test_helpers"
+
+# ===========================
+# ⚙️ Configuración Rails/RSpec
+# ===========================
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
@@ -34,6 +80,21 @@ begin
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
+
+# ===========================
+# 🔧 Soporte adicional
+# ===========================
+# Requiere automáticamente archivos en spec/support
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+# ===========================
+# 🧬 Cargar specs de todos los engines
+# ===========================
+Dir[Rails.root.join("engines/*/spec/**/*_spec.rb")].each { |f| require f }
+
+# ===========================
+# 🧪 Configuración RSpec
+# ===========================
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [
@@ -72,20 +133,24 @@ RSpec.configure do |config|
   #
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
-  # Cargar specs de todos los engines
-  Dir[Rails.root.join("engines/*/spec/**/*_spec.rb")].each { |f| require f }
-
-  # Carga automática de helpers
-  Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
-end
-
-RSpec.configure do |config|
+  # ===========================
+  # 🏭 FactoryBot
+  # ===========================
   config.include FactoryBot::Syntax::Methods
 
-  # 🔥 Esto hace que FactoryBot busque factories también dentro de los engines
   FactoryBot.definition_file_paths = [
     Rails.root.join('spec/factories'),
     *Dir[Rails.root.join('engines/*/spec/factories')]
   ]
   FactoryBot.find_definitions
+end
+
+# ===========================
+# 🧩 Shoulda Matchers
+# ===========================
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end

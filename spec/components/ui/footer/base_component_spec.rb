@@ -3,13 +3,24 @@
 require "rails_helper"
 
 RSpec.describe Ui::Footer::BaseComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject(:component) { described_class.new }
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+  describe "render" do
+    before do
+      render_inline(component)
+      @doc = Nokogiri::HTML.parse(rendered_content)
+    end
+
+    it "renders the footer element" do
+      expect(@doc.css("footer.bg-gray-900")).not_to be_empty
+    end
+
+    it "shows the copyright text with the current year" do
+      expect(@doc.to_html).to include("© #{Time.current.year} ERP+ — Todos los derechos reservados")
+    end
+
+    it "shows the author signature" do
+      expect(@doc.to_html).to include("Hecho con ❤️ por Carlos Rodriguez")
+    end
+  end
 end
