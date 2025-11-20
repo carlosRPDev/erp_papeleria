@@ -38,3 +38,7 @@
 
 # Ignorar los repos internos
 engines/*/.git
+
+# Ignorar las carpetas de vendor
+/vendor/bundle
+/vendor/cache
