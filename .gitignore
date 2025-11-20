@@ -43,3 +43,6 @@ engines/*/.git
 /vendor/bundle
 /vendor/cache
 /vendor/
+
+# Ignorar carpetas de coverage
+/coverage/
